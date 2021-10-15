@@ -6,6 +6,7 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView(
+        padding: EdgeInsets.all(5),
         children: [
           ...(DUMMY_CATEGORIES as List).map((foodData) {
             return CategoryItem(foodData.title, foodData.color);
