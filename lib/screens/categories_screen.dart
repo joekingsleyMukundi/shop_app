@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/category_item.dart';
+import 'package:shop_app/widgets/category_item.dart';
 import 'package:shop_app/dummy_data.dart';
 
 class Categories extends StatelessWidget {
@@ -9,7 +9,7 @@ class Categories extends StatelessWidget {
         padding: EdgeInsets.all(5),
         children: [
           ...(DUMMY_CATEGORIES as List).map((foodData) {
-            return CategoryItem(foodData.title, foodData.color);
+            return CategoryItem(foodData.id, foodData.title, foodData.color);
           })
         ],
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(

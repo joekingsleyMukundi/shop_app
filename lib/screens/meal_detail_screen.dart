@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
-class CategoryMealsScreen extends StatelessWidget {
-  final title;
-  CategoryMealsScreen(this.title);
+class MealDetailScreen extends StatelessWidget {
+  static final routeName = '/mealDetail';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text('mealDetail'),
       ),
       body: Center(
-        child: Text("food"),
+        child: Text('detail'),
       ),
     );
   }

@@ -1,21 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/category_meals_screen.dart';
+import '../screens/category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
+  final id;
   final title;
   final color;
-  CategoryItem(this.title, this.color);
+  CategoryItem(this.id, this.title, this.color);
   @override
   Widget build(BuildContext context) {
     void changeScreen(context) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) {
-            return CategoryMealsScreen(title);
-          },
-        ),
+      Navigator.of(context).pushNamed(
+        CategoryMealsScreen.routeName,
+        arguments: {'id': id, 'title': title},
       );
     }
+
+    // void changeScreen(context) {
+    //   Navigator.of(context).push(
+    //     MaterialPageRoute(
+    //       builder: (context) {
+    //         return CategoryMealsScreen(title);
+    //       },
+    //     ),
+    //   );
+    // }
 
     return InkWell(
       onTap: () {
