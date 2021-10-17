@@ -3,13 +3,14 @@ import 'package:shop_app/models/meals.dart';
 import 'package:shop_app/screens/meal_detail_screen.dart';
 
 class Meal extends StatelessWidget {
+  final id;
   final imageUrl;
   final title;
   final duration;
   final affordability;
   final complexity;
 
-  Meal(this.imageUrl, this.title, this.duration, this.affordability,
+  Meal(this.id, this.imageUrl, this.title, this.duration, this.affordability,
       this.complexity);
 
   String get complextyText {
@@ -39,7 +40,7 @@ class Meal extends StatelessWidget {
   }
 
   void selectMeal(context) {
-    Navigator.of(context).pushNamed(MealDetailScreen.routeName);
+    Navigator.of(context).pushNamed(MealDetailScreen.routeName, arguments: id);
   }
 
   @override
